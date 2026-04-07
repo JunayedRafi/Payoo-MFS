@@ -11,9 +11,30 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap" rel="stylesheet">
+    <!-- DaisyUI -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 </head>
-<body>
-    
+<body class="bg-[#F2F3F5] outfit h-screen flex flex-col justify-center items-center" >
+    <div class="h-[130px] w-[300px] bg-[url(./assets/bg.png)] bg-cover flex justify-center items-center">
+        <img src="./assets/Group.png" alt="">
+    </div>
+    <form class="bg-white rounded-2xl p-5 w-[350px]">
+        <div>
+            <label for="" class="font-semibold">Mobile Number</label>
+            <br>
+            <input type="text" id="mobileNumber" placeholder="Enter Your Number" class="input bg-[#F4F5F7] mt-2 rounded-full p-5" />
+        </div>
+        <div class="mt-4">
+            <label for="" class="font-semibold">Pin Number</label>
+            <br>
+            <input type="text" id="pinNumber" placeholder="Enter Your Pin" class="input bg-[#F4F5F7] mt-3 rounded-full p-5" />
+        </div>
+        <button id="loginBtn" class="btn btn-primary mt-5 w-full rounded-full bg-[#0874F2] border-none">Primary</button>
+
+    </form>
+
+
+    <script src="./scripts.js"></script>
 </body>
 </html>
