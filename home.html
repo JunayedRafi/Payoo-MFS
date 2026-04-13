@@ -15,7 +15,7 @@
     <!-- DaisyUI -->
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 </head>
-<body class="bg-[#F2F3F5] outfit h-full pb-7" >
+<body class="bg-[#F2F3F5] outfit h-100 pb-7" >
     <div class="bg-white max-w-lg mx-auto rounded-b-xl ">
         <div class="flex justify-between items-center border-b-1 border-gray-400 p-3">
             <div class="flex ">
@@ -36,27 +36,27 @@
             <p class="text-[#08080880]">Enjoy easy and convenient financial services with us. Cashout charge is low and </p>
             <!-- buttons -->
              <div class="min-h-[200px] grid grid-cols-3 max-w-lg mx-auto gap-4 mt-3 pb-6">
-                <div id="add-button" class="border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
+                <div id="add-button" class="form-btn border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
                     <img src="./assets/wallet1.png" alt="" class="mx-auto" srcset="">
                     <h2 class="">Add Money</h2>
                 </div>
-                <div id="cash-out-button" class="border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
+                <div id="cash-out-button" class="form-btn border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
                     <img src="./assets/send1.png" alt="" class="mx-auto" srcset="">
                     <h2 class="">Cashout</h2>
                 </div>
-                <div class="border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
+                <div class="form-btn border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
                     <img src="./assets/money1.png" alt="" class="mx-auto" srcset="">
                     <h2 class="">Transfer</h2>
                 </div>
-                <div class="border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
+                <div class="form-btn border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
                     <img src="./assets/bonus1.png" alt="" class="mx-auto" srcset="">
                     <h2 class="">Get Bonus</h2>
                 </div>
-                <div class="border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
+                <div id="pay-bill-button" class="form-btn border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
                     <img src="./assets/purse1.png" alt="" class="mx-auto" srcset="">
                     <h2 class="">Pay Bill</h2>
                 </div>
-                <div class="border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
+                <div id="transactions-button" class="form-btn border-1 border-[#0808081A] text-center flex flex-col items-center justify-center p-3 rounded-xl">
                     <img src="./assets/transaction1.png" alt="" class="mx-auto" srcset="">
                     <h2 class="">Transactions</h2>
                 </div>
@@ -67,7 +67,7 @@
     </div>
 
     <div class="all-form-sections max-w-lg mx-auto">
-        <div id="add-money-parent" class="mx-6 hidden">
+        <div id="add-money-parent" class="mx-6 form">
             <h1 class="font-bold my-5">Add Money</h1>
             <form class="bg-white rounded-2xl p-5">
                 <div class="">
@@ -98,8 +98,8 @@
                 <button id="addMoneyBtn" class="btn btn-primary mt-5 w-full rounded-full bg-[#0874F2] border-none">Add Money</button>
             </form>
         </div>
-
-        <div id="cash-out-parent" class="mx-6">
+        
+        <div id="cash-out-parent" class="form mx-6 hidden">
             <h1 class="font-bold my-5">Cash Out</h1>
             <form class="bg-white rounded-2xl p-5">
                 <div class="mt-4">
@@ -119,6 +119,46 @@
                 </div>
                 <button id="withdrawMoneyBtn" class="btn btn-primary mt-5 w-full rounded-full bg-[#0874F2] border-none">Withdraw Money</button>
             </form>
+        </div>
+        <div id="pay-bill-parent" class="mx-6 form hidden">
+            <h1 class="font-bold my-5">Pay Bill</h1>
+            <form class="bg-white rounded-2xl p-5">
+                <div class="">
+                    <h1>Select a bank</h1>
+                    <select id="bank" class="select bg-[#F4F5F7] mt-2 rounded-full w-full">
+                        <option disabled selected>Select bank</option>
+                        <option>CityBank</option>
+                        <option>Islami Bank</option>
+                        <option>Brac Bank</option>
+                        <option>bKash</option> 
+                    </select>
+                </div>
+                <div class="mt-4">
+                    <label for="" class="font-semibold">Biller Account Number</label>
+                    <br>
+                    <input type="text" id="accountNumber" placeholder="Enter 11 digit account number" class="input bg-[#F4F5F7] mt-3 rounded-full p-5 w-full w-full" />
+                </div>
+                <div class="mt-4">
+                    <label for="" class="font-semibold">Amount to pay</label>
+                    <br>
+                    <input type="number" id="addAmount" placeholder="Enter Amount" class="input bg-[#F4F5F7] mt-3 rounded-full p-5 w-full" />
+                </div>
+                <div class="mt-4">
+                    <label for="" class="font-semibold">Pin Number</label>
+                    <br>
+                    <input type="password" id="addPin" placeholder="Enter 4 digit pin number" class="input bg-[#F4F5F7] mt-3 rounded-full p-5 w-full" />
+                </div>
+                <button id="addMoneyBtn" class="btn btn-primary mt-5 w-full rounded-full bg-[#0874F2] border-none">Add Money</button>
+            </form>
+        </div>
+        <div id="transaction-parent" class="mx-6 form hidden">
+            <div class="flex justify-between items-center">
+                <h1 class="font-bold my-5">Pay Bill</h1>
+                <p class="text-[#08080880]">View All</p>
+            </div>
+            <div id="transactionContainer"></div>
+            </div>
+            
         </div>
     </div>
     <script src="./home.js"></script>
